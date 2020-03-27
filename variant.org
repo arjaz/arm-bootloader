@@ -1,0 +1,6 @@
+#+BEGIN_SRC emacs-lisp
+  (mod (+ 7117 7106) 16)
+#+END_SRC
+
+#+RESULTS:
+: 15
