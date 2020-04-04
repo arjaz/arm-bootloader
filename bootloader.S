@@ -17,9 +17,13 @@ bootload:
     ldr r0, =end_of_image
     ldr r1, =image
     ldr r2, =_ram_start
+
+    // r3 - size of the program
+    sub r3, r0, r1
+    add r2, r3
 loop:
-    ldr r3, [r1], #4
-    str r3, [r2], #4
+    ldmdb r0!, {r5, r6, r7}
+    stmdb r2!, {r5, r6, r7}
     cmp r0, r1
     bhi loop
 

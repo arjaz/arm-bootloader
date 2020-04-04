@@ -45,8 +45,8 @@ __kernel_reset__:
 2:
     // r1 = (a (+|-) b) / c -- result
     udiv r1, r3, r4
-    // r0 = result
-    mov r0, r1
+    // r3 = result
+    mov r3, r1
 
     ldr r0, =final
     bl dbgput
